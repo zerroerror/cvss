@@ -3,6 +3,17 @@ def RoundUp(num):
     if (num%10>0):
         num=num+10-num%10
     return num/100
+def Dengerlevel(BaseScore):
+    if (BaseScore==0):
+        print('No danger')
+    if (BaseScore>=0.1 and BaseScore<=3.9):
+        print('Low Danger Level')
+    if (BaseScore>=4 and BaseScore<=6.9):
+        print('Medium Danger Level')
+    if (BaseScore>=7 and BaseScore<=8.9):
+        print('High Danger Level')
+    if (BaseScore>=9):
+        print('Critical Danger Level')
 AV=float(input('Please, input AV : \n'))
 AC=float(input('Please, input AC : \n'))
 PR=float(input('Please, input PR : \n'))
@@ -26,3 +37,5 @@ else:
         BaseScore=RoundUp(min(1.08*(Impact+Exploitability),10))
 print('-------------------\n')
 print('BaseScore = ',BaseScore)
+print('-------------------\n')
+Dengerlevel(BaseScore)
